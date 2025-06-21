@@ -1,0 +1,58 @@
+diff --git a/key/build.gradle b/key/build.gradle
+index afcb7defba..22864cc3c4 100644
+--- a/key/build.gradle
++++ b/key/build.gradle
+@@ -9,11 +9,6 @@ plugins {
+     //https://docs.gradle.org/current/userguide/eclipse_plugin.html
+     id("eclipse")  //support for Eclipse
+ 
+-    //Uploading maven artifacts to bintray
+-    //If you want access ask @weigl for repository permission.
+-    //https://github.com/bintray/gradle-bintray-plugin
+-    id "com.jfrog.bintray" version "1.8.4" apply false
+-
+     //Checks and adds the license header of the source files:
+     // Task: `licenseMain' and `licenseFormatMain'
+     //https://github.com/hierynomus/license-gradle-plugin
+@@ -57,7 +52,6 @@ subprojects {
+     apply plugin: "maven-publish"
+     apply plugin: "idea"
+     apply plugin: "eclipse"
+-    apply plugin: "com.jfrog.bintray"
+ 
+     // apply plugin: 'checkstyle'
+     // apply plugin: 'pmd'
+@@ -229,33 +223,6 @@ subprojects {
+                 }
+             }
+         }
+-        repositories {
+-            maven {
+-                name = "bintray-snapshots"
+-                url = "https://dl.bintray.com/key/stable-snapshots"
+-            }
+-        }
+-    }
+-
+-    bintray { //configures the bintray plugin.
+-
+-        //credentials are either defined in the  project or by preferable as environment variables
+-        //ask @weigl if you need the username and password.
+-        user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
+-        key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+-        publications = ['mavenJava']
+-
+-        dryRun = false //[Default: false] Whether to run this as dry-run, without deploying
+-        publish = true //[Default: false] Whether version should be auto published after an upload
+-        override = false //[Default: false] Whether to override version artifacts already published
+-
+-        pkg {
+-            userOrg = "key"
+-            repo = 'stable-snapshots'
+-            name = "key"
+-            licenses = ['GPL-2.0']
+-            vcsUrl = 'https://git.key-project.org/key/key.git'
+-        }
+     }
+ 
+     license {//configures the license file header
