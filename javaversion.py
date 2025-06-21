@@ -7,7 +7,7 @@ year,month,day = map(int, Path.cwd().name.split("-"))
 folderdate = datetime(year,month,day)
 
 
-if folderdate  < datetime(2021,4,1): 
+if folderdate  < datetime(2020,2,1): 
     path = ("~/.sdkman/candidates/java/8.0.452-tem/")
 elif folderdate  < datetime(2023,12,31): 
     path = ("~/.sdkman/candidates/java/11.0.27-tem/")

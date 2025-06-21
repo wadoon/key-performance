@@ -7,7 +7,7 @@ function compile_old() {
 
 function compile_new() {
 	/usr/bin/time -a -o $PWD/compile.time.txt -f "%U;%S;%e;%E;%P;%x;$(pwd);%C"  \
-		./gradlew --no-daemon --parallel $CLEAN testClasses
+		./gradlew --no-daemon --parallel $CLEAN testClasses 
 }
 
 function select_java() {
@@ -25,11 +25,11 @@ function compile() {
 	fi
 }
 
-PWD=$(pwd)
+BASE=$(pwd)
 
 for dt in $@; do
 	LOG=$(pwd)
 	cd $dt
 	compile	| tee $LOG/compile.$dt.log
-	cd $PWD
+	cd $BASE
 done
