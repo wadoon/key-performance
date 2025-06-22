@@ -9,7 +9,7 @@ folderdate = datetime(year,month,day)
 
 if folderdate  < datetime(2020,2,1): 
     path = ("~/.sdkman/candidates/java/8.0.452-tem/")
-elif folderdate  < datetime(2023,12,31): 
+elif folderdate  < datetime(2023,10,1): 
     path = ("~/.sdkman/candidates/java/11.0.27-tem/")
 elif folderdate  < datetime(2023,12,31): 
     path = ("~/.sdkman/candidates/java/17.0.15-tem/")
