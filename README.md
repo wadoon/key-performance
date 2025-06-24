@@ -53,4 +53,6 @@ keycompile.sh 2025-01-01
 ```
 
 
+## Hints 
 
+Gradle folder can not be shared between multiple hosts using NFS. Use `export GRADLE_USER_HOME=/tmp/gradle` and define a host-local folder.
