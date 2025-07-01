@@ -888,7 +888,7 @@ from datetime import datetime
 COMMIT_DATA = [ (datetime.fromisoformat(dt), sha) for dt, sha, _ in COMMIT_DATA_RAW ]
 
 for dt in sys.argv[1:]:
-	dt = datetime.parse(dt)
+	dt = datetime.fromisoformat(dt)
 	rev = None
 	found = False
 	for cdt, crev in COMMIT_DATA:
