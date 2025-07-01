@@ -1,14 +1,17 @@
 #!/usr/bin/python3
 
 
-import os
+import sys, os
 from pathlib import Path
 
 PWD=Path(os.getcwd())
 
 TARGET=PWD / "keyrepos"
 
-TARGET.mkdir()
+try:
+	TARGET.mkdir()
+except:
+	pass
 
 import csv
 
@@ -285,7 +288,7 @@ COMMIT_DATA_RAW = (
 	("2021-06-17T19:36:58.741Z","f5279ab703bf45fc30a69339e8e93aae441a353b","Better exception message in JML parser"),
 	("2021-06-20T04:42:47.845Z","b7dedcd4040f65a391397db2545d26436ce7abb2","JML-Extension: Assert/Assume and *_free for block contracts"),
 	("2021-06-22T10:09:44.278Z","5f86a59d74f0c9631751eea5efba57099ec846ce","Resolve ""SMT Option GUI throws NPE on startup"""),
-	("2021-06-22T12:00:51.537Z","738f1c8ad74ee7383f575b1f772e61ca351a78cd","Fix \singleton(3)"),
+	("2021-06-22T12:00:51.537Z","738f1c8ad74ee7383f575b1f772e61ca351a78cd","Fix \\singleton(3)"),
 	("2021-06-22T17:25:05.973Z","0753b2af6fd1d00bf5b53e16a5264463b946d49c","Fix bug: missing sonarqube message"),
 	("2021-06-29T10:49:22.904Z","a409d9009884078eedf85fd111c85be9305f8d18","Better SourceView Tooltip"),
 	("2021-07-12T20:32:50.691Z","31a8d7d8a6db972b00328d19c17b2526ca9fead7","catch headless to make key --auto runnable again"),
@@ -412,7 +415,7 @@ COMMIT_DATA_RAW = (
 	("2022-04-13T21:13:30.443Z","e56ce9e777867ce368978ff79702f5db107f42bc","suggested automation for seqPerm"),
 	("2022-04-13T21:20:03.822Z","46ffd89891af2f328bfc4f1dd30141ce26706e74","Performance: pause tree updates while executing ""Set All Goals Below to XX"""),
 	("2022-04-17T10:09:34.995Z","141df5c69718d0c2072053603978dbcbb24f8f95","Multiplication for rule costs"),
-	("2022-04-27T07:58:40.800Z","722f58096eb38d9fe318a59c1d436ac72a2ed98f","support \old() in jml asserts"),
+	("2022-04-27T07:58:40.800Z","722f58096eb38d9fe318a59c1d436ac72a2ed98f","support \\old() in jml asserts"),
 	("2022-04-27T12:40:41.237Z","231b72e31a0f2c8c74782d09ce3ebb0ca77fb4b6","More descriptive names for result variables"),
 	("2022-04-28T09:39:18.924Z","0b17dbeef1b5e3b64206faa943e81835150e1de3","implement some features of the jml assert wishlist #1700"),
 	("2022-05-13T16:41:19.430Z","9928a322455e6650ab1f6781936e72415c5e92e5","Check formatting  with Spotless"),
@@ -452,7 +455,7 @@ COMMIT_DATA_RAW = (
 	("2022-11-29T14:39:46.569Z","e88b4dc1e8c58e65e0655118f6e379734a341fbc","Fix widening casts and boxing of extension primitive types like bigint"),
 	("2022-11-29T21:47:56.125Z","94b1f9038de37008aacd4e4fc20027ecfc9c44a1","New rules from the sorting case study"),
 	("2022-11-30T00:47:30.247Z","2da5e5f6817a80edf922fb2710b06fc88066af56","Fix three memory leaks"),
-	("2022-12-01T11:21:12.229Z","5aef42ff40e46e1fd03729b48ddf0b04e3e53f61","Fix #1702: Allow declaration of function symbols in custom key file and to use them in JML via \dl"),
+	("2022-12-01T11:21:12.229Z","5aef42ff40e46e1fd03729b48ddf0b04e3e53f61","Fix #1702: Allow declaration of function symbols in custom key file and to use them in JML via \\dl"),
 	("2022-12-01T18:29:55.979Z","bf227f557cff504a3125e81f61284a82848219a3","Fix issue #1707"),
 	("2022-12-02T17:47:02.740Z","3079842d22a3c5204b17bff097891ea4d7cbf6f2","Fix leftover files that are not formatted properly"),
 	("2022-12-04T14:03:19.136Z","8eaf2454fa9431a1e630f9d1f3684d87cdcaf01a","Improved taclet error reporting"),
@@ -518,7 +521,7 @@ COMMIT_DATA_RAW = (
 	("2023-03-09T19:17:09Z","b8e8abe9aa92b0f6fc9816b932e8c4fbfb86fb88","Register modifier when parsing JML spec"),
 	("2023-03-09T20:26:15Z","6dbce7d6527aa8e24d01f74aa7e064ff8333b4a8","Bump ch.qos.logback:logback-classic from 1.2.10 to 1.4.5"),
 	("2023-03-09T22:39:09Z","9f694835379ad32240b2db3bde71ed58c34a6fea","Formatter"),
-	("2023-03-11T15:17:46Z","e0d78c6c50bbf470d7bcb252147e91a86090bc98","Read \profile and \settings once (fixes #1738)"),
+	("2023-03-11T15:17:46Z","e0d78c6c50bbf470d7bcb252147e91a86090bc98","Read \\profile and \\settings once (fixes #1738)"),
 	("2023-03-12T01:03:25Z","08c08a63d0237fd7b4290b135b25079176ed94b9","Position information overhaul"),
 	("2023-03-14T12:42:42Z","1e4d7d16fb05325d174d9e298e78e868fd7d21af","Bump org.junit.vintage:junit-vintage-engine from 5.8.2 to 5.9.2"),
 	("2023-03-14T12:58:32Z","733526d33579ec948d183bd5ebeb71dead065049","Bump org.antlr:antlr4 from 4.9.3 to 4.12.0"),
@@ -774,7 +777,7 @@ COMMIT_DATA_RAW = (
 ("2024-04-22T23:10:47Z","5a90d767f6d7a167748852ba9bae8d9a20ff8fa4","Bump ch.qos.logback:logback-classic from 1.5.5 to 1.5.6 in the gradle-deps group"),
 ("2024-04-23T00:39:37Z","6dee232e5e1025c7f12c7f66e04d15c1fa3620ad","Add key features for the FM tutorial"),
 ("2024-04-23T11:30:20Z","8f62cf5a1df8de8cc5b6011a3dbe295abe109bde","Fixed the path-to-smt-solver bug in windows"),
-("2024-04-29T23:56:11Z","cf1d6cb20ff20ff59df5df487c339da57a69d7d0","Support for JML`\TYPE`"),
+("2024-04-29T23:56:11Z","cf1d6cb20ff20ff59df5df487c339da57a69d7d0","Support for JML`\\TYPE`"),
 ("2024-05-02T11:39:03Z","e93999903ae21ec23b94ad5b79c27cf2d566c46a","Basic Nullness Checker configuration"),
 ("2024-05-03T20:42:56Z","4774c7d9aff01b2f15d2ec98c1b955d392d6cf02","Nullness Type System activated for `key.ncore`"),
 ("2024-05-06T17:38:37Z","66fc99f47d3c94fe5dbf37dada114bebc81cf78c","Renovation of PO loading"),
@@ -784,7 +787,7 @@ COMMIT_DATA_RAW = (
 ("2024-05-24T21:42:48Z","af7338b7121d7607a6c3795fcf1a55f1fe6b4823","Bump the github-actions-deps group with 11 updates"),
 ("2024-06-02T17:54:14Z","63e3e069415ae1362cbf22d0b0825ca2e2ce970b","Bump the gradle-deps group with 6 updates"),
 ("2024-06-02T17:54:14Z","a59981335ec5cb3d4795f654ba73b24ddefb0904","Bump the github-actions-deps group with 4 updates"),
-("2024-06-04T21:28:01Z","51f368c9ee0da2d2e053933de19e202ef7f36af4","Allow ""\seq()"" and ""\locset()"" in JML"),
+("2024-06-04T21:28:01Z","51f368c9ee0da2d2e053933de19e202ef7f36af4","Allow \\seq() and \\locset() in JML"),
 ("2024-06-13T20:50:50Z","a8dab3225d5dadf68050724a29fe70dab5161ca8","Introduce JML aliases of frame conditions for better tool compatibility"),
 ("2024-06-14T08:03:43Z","1ef5c707cc18b3ed5c5708f40a62c8666252463a","Fix loading of closed proofs (GUI threw error)"),
 ("2024-06-14T13:12:54Z","19f83d3434b7d765ad42500228412ba29a6721e7","Fix loading of taclet proof obligations (issue #3477)"),
@@ -882,7 +885,7 @@ COMMIT_DATA_RAW = (
 
 from datetime import datetime
 
-COMMIT_DATA = [ (datetime.fromisoformat(dt), sha) for dt, sha, _ in COMMIT_MAP_RAW ]
+COMMIT_DATA = [ (datetime.fromisoformat(dt), sha) for dt, sha, _ in COMMIT_DATA_RAW ]
 
 for dt in sys.argv[1:]:
 	dt = datetime.parse(dt)
